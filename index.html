@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Village88 JavaScript Track | OOP | Objection Your Honor</title>
+    </head>
+    <body>
+        <script src="index.js"></script>
+        <script>
+            let case1 = new createdCase("Malicious Mischief", 3, 3, 3, 18, 75);
+            let prosecutor = new Prosecutor ("John", 30);
+            let defendant1 = new Defendant ("Girlie", 5);
+            let defendant2 = new Defendant ("Onel", 25);
+            let trialCourt = new TrialCourt();
+
+            prosecutor.prosecute(defendant1, case1);
+            trialCourt.initiateTrial(defendant1, prosecutor);
+
+            prosecutor.prosecute(defendant2, case1);
+            trialCourt.initiateTrial(defendant2, prosecutor);
+        </script>
+    </body>
+</html>
