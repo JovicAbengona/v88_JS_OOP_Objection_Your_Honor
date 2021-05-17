@@ -2,13 +2,14 @@ class TrialCourt{
     static initiateTrial(defendant, prosecutor){
         this.defendant = defendant;
         this.prosecutor = prosecutor;
+        const verdict = this.getVerdict();
         console.log(`Name: ${this.defendant.name}`);
         console.log(`Age: ${this.defendant.age} years old`);
         console.log(`Case Title: ${this.defendant.createdCase.title}`);
         console.log(`Filed By: ${this.prosecutor.name}`);
-        console.log(`Verdict: ${this.getVerdict()}`);
+        console.log(`Verdict: ${verdict}`);
 
-        if(this.getVerdict() == "GUILTY"){
+        if(verdict == "GUILTY"){
             console.log(`Released Date: ${this.defendant.createdCase.releaseDate}`);
         }
     }
