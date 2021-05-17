@@ -1,22 +1,21 @@
 class TrialCourt{
-    initiateTrial(defendant, prosecutor){
+    static initiateTrial(defendant, prosecutor){
         this.defendant = defendant;
         this.prosecutor = prosecutor;
-        this.getVerdict();
-    }
-
-    getVerdict(){
-        let verdict = (this.defendant.age >= this.defendant.createdCase.minAge && this.defendant.age <= this.defendant.createdCase.maxAge) ? "GUILTY" : "NOT GUILTY";
-
         console.log(`Name: ${this.defendant.name}`);
         console.log(`Age: ${this.defendant.age} years old`);
         console.log(`Case Title: ${this.defendant.createdCase.title}`);
         console.log(`Filed By: ${this.prosecutor.name}`);
-        console.log(`Verdict: ${verdict}`);
+        console.log(`Verdict: ${this.getVerdict()}`);
 
-        if(verdict == "GUILTY"){
+        if(this.getVerdict() == "GUILTY"){
             console.log(`Released Date: ${this.defendant.createdCase.releaseDate}`);
         }
+    }
+
+    static getVerdict(){
+        const verdict = (this.defendant.age >= this.defendant.createdCase.minAge && this.defendant.age <= this.defendant.createdCase.maxAge) ? "GUILTY" : "NOT GUILTY";
+        return verdict;
     }
 }
 
